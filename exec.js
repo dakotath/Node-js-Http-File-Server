@@ -74,7 +74,7 @@ const server = http.createServer(function(req, res) {
           {
             aud = 0;
             fs.copyFile("." + req.url.toString(), "." + req.url.toString().replace(".mp3", ".matmp"), (err) => { if (err) { console.log('Error Occurred:', err); } else { console.log('File Copied Successfully!') } });
-            res.write("<audio controls src='" + req.url.toString().replace(".mp3", ".matmp") + "' autoplay></audio>");
+            res.write("<font color='red' size='20'>Playing " + req.url.toString().replace("/", "") + "</font><h4 align='left'>" + "<audio controls src='" + req.url.toString().replace(".mp3", ".matmp") + "' autoplay></audio>");
             console.log(req.url.toString())
             res.end()
             aud = 1;
@@ -87,7 +87,7 @@ const server = http.createServer(function(req, res) {
               if(findWord(".mp3", req.url.toString())) {
                 fs.copyFile("." + req.url.toString(), "." + req.url.toString().replace(".mp3", ".matmp"), (err) => { if (err) { console.log('Error Occurred:', err); } else { console.log('File Copied Successfully!') } });
               }
-              res.write("<audio controls src='" + req.url.toString().replace(".mp3", ".matmp") + "' autoplay></audio>");
+              res.write(req.url.toString().replace("/", "") + "<audio controls src='" + req.url.toString().replace(".mp3", ".matmp") + "' autoplay></audio>");
               console.log(req.url.toString())
               aud = 1;
             }
