@@ -1,0 +1,1 @@
+#This http server runs on port 8080 and cas support to play HTML, MP3 and MP4 files without adding more stuff to exec.js The exec.js contains the data for the server, you can modify it however you like!
