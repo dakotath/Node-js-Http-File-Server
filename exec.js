@@ -106,7 +106,7 @@ const server = http.createServer(function(req, res) {
               {
                 aud = 0;
                 fs.copyFile("." + req.url.toString(), "." + req.url.toString().replace(".mp4", ".vatmp"), (err) => { if (err) { console.log('Error Occurred:', err); } else { console.log('File Copied Successfully!') } });
-                res.write("<video controls src='" + req.url.toString().replace(".mp4", ".vatmp") + "' autoplay></video>");
+                res.write(`<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Page Title</title><meta name="viewport" content="width=device-width, initial-scale=1"></head><body><style>body { background:#000000; background:-moz-radial-gradient(center, #000000 0%, #00FFFE 0%, #000000 100%); background:-webkit-radial-gradient(center, #000000 0%, #00FFFE 0%, #000000 100%); background:radial-gradient(ellipse at center, #000000 0%, #00FFFE 0%, #000000 100%) } .text_cn { text-align:center; align:center }</style><h4 align="center"><font color="red" class="text_cn" size="20">Video Player</font></h4><h4 align="left"><video controls id="vid" src='` + req.url.toString().replace(".mp4", ".vatmp") + `' autoplay></video><script>vid=document.querySelector('#vid');vid.height=window.innerHeight-130;vid.width=window.innerWidth-50;</script></body></html>`);
                 console.log(req.url.toString())
                 res.end()
                 aud = 1;
@@ -119,7 +119,7 @@ const server = http.createServer(function(req, res) {
                   if(findWord(".mp4", req.url.toString())) {
                     fs.copyFile("." + req.url.toString(), "." + req.url.toString().replace(".mp4", ".vatmp"), (err) => { if (err) { console.log('Error Occurred:', err); } else { console.log('File Copied Successfully!') } });
                   }
-                  res.write("<video controls src='" + req.url.toString().replace(".mp4", ".vatmp") + "' autoplay></video>");
+                  res.write(`<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Page Title</title><meta name="viewport" content="width=device-width, initial-scale=1"></head><body><style>body { background:#000000; background:-moz-radial-gradient(center, #000000 0%, #00FFFE 0%, #000000 100%); background:-webkit-radial-gradient(center, #000000 0%, #00FFFE 0%, #000000 100%); background:radial-gradient(ellipse at center, #000000 0%, #00FFFE 0%, #000000 100%) } .text_cn { text-align:center; align:center }</style><h4 align="center"><font color="red" class="text_cn" size="20">Video Player</font></h4><h4 align="left"><video controls id="vid" src='` + req.url.toString().replace(".mp4", ".vatmp") + `' autoplay></video><script>vid=document.querySelector('#vid'); vid.height=window.innerHeight-130; vid.width=window.innerWidth-50; </script></body></html>`);
                   console.log(req.url.toString())
                   aud = 1;
                 }
