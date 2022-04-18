@@ -9,7 +9,7 @@ int main(int argc, const char *argv[]) {
 
                 continue; // Skip everything that starts with a dot
 
-            printf("<a href='%s", f->d_name);
+            printf("<br><li><a href='%s", f->d_name);
             printf("'>%s", f->d_name);
             printf("</a>\n");
         }

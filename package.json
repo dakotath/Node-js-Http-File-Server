@@ -1,0 +1,19 @@
+{
+  "name": "test-project",
+  "version": "1.0.0",
+  "description": "A simple http web server.",
+  "main": "src/main.js",
+  "private": true,
+  "scripts": {
+    "dev": "node src/nodejs.js",
+    "start": "npm run dev"
+  },
+  "dependencies": {
+    "http": "",
+    "fs": ""
+  },
+  "engines": {
+    "node": ">= 6.0.0",
+    "npm": ">= 3.0.0"
+  }
+}
